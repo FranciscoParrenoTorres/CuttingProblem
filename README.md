@@ -18,6 +18,7 @@ The instances should have this format:
 First line: Number of items
 Second line: L W
 Each line for item: l w minq maxq value
+
 5 
 10	10
 3	7	0	2	35
