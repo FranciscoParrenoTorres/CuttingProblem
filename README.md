@@ -1,6 +1,14 @@
 # CuttingProblem
 Algorithms for the cutting 2d problem
 
+The visualization needs Opengl
+https://www.transmissionzero.co.uk/files/software/development/GLUT/freeglut-MinGW.zip
+
+You should follow the instructions of the readme in order to install OpenGL.
+
+
+
+
 The program has the following parameters:
 
 -Instancia nombre_instancia
