@@ -1,0 +1,149 @@
+void CUTTING::LeerProblema(char *name)
+{
+	int maxL=0;
+	m_Numpiezas_total=0;
+	bool ProblemasHopper=false;
+	bool ProblemasLodi=false;
+	bool ProblemasHifi=false;
+	m_conpesos=true;
+	FILE *fin2;
+	m_Q=0;
+	m_total_valor=0;
+	m_total_superficie=0;
+	int Largop=0,Anchop=0,minp=0,maxp=0,valp=0,kk=0;
+	fin2=fopen(name,"r+");
+	if (fin2==NULL)
+	{
+		printf("Problemas al leer el archivo de problemas, no se encuentra el archivo");
+		exit(4);
+	}
+
+	fscanf(fin2,"%d",&m_Numpiezas);
+	if (m_Numpiezas>9000)
+	{
+		ProblemasHopper=true;
+		m_Numpiezas=m_Numpiezas-9000;
+	}
+	if (m_Numpiezas==444)
+	{
+		ProblemasHifi=true;
+	}
+	fscanf(fin2,"%d %d",&m_L,&m_W);
+	if (ProblemasHopper==true)
+	{
+		m_W=m_L;
+		m_L=100000;
+	}
+
+	if (ProblemasHifi==true)
+	{
+		m_Numpiezas=m_W;
+		m_W=m_L;
+		m_L=100000;
+	}
+	if (m_W==1) 
+	{
+		ProblemasLodi=true;
+		m_W=m_L;
+		m_L=100000;
+	}
+	m_MinLargo=9999;
+	m_MinAncho=9999;
+	m_MaxLargo=0;
+	for (int i=0;i<m_Numpiezas;i++)
+	{
+		if (ProblemasHopper!=true && ProblemasLodi!=true && ProblemasHifi!=true)
+		fscanf(fin2,"%d %d %d %d %d",&Largop,&Anchop,&minp,&maxp,&valp);
+		else
+		{
+			if (ProblemasHopper==true)
+			{
+				fscanf(fin2,"%d %d",&Anchop,&Largop);
+				minp=0;
+				maxp=1;
+				valp=Largop*Anchop;
+
+			}
+			if (ProblemasLodi==true)
+			{
+				fscanf(fin2,"%d %d %d",&Anchop,&Largop,&kk);
+				minp=0;
+				maxp=1;
+				valp=Largop*Anchop;
+
+			}
+			if (ProblemasHifi==true)
+			{
+				fscanf(fin2,"%d %d %d",&Largop,&Anchop,&maxp);
+				minp=0;
+				valp=Largop*Anchop;
+
+			}
+		}
+		//Si alguna pieza es obligatoria
+		//tenemos un problema restringido
+		if (minp>0)
+		{
+			m_Restringido=true;
+			m_Posible=false;
+		}
+		m_Q+=maxp;
+		if (Largop<m_MinLargo) m_MinLargo=Largop;
+		if (Anchop<m_MinAncho) m_MinAncho=Anchop;
+		if (Largop>m_MaxLargo) m_MaxLargo=Largop;
+		/*
+		//buscar si hay una pieza igual
+		std::vector<Pieza> ::iterator ITP;
+		bool existe=false;
+		for (ITP=m_Piezas.begin();ITP!=m_Piezas.end();ITP++)
+		{
+			if ((*ITP).largo==Largop && (*ITP).ancho==Anchop)
+			{
+				existe=true;
+				(*ITP).max=(*ITP).max+maxp;
+			}
+		}
+		if (existe!=true)
+		{
+			Pieza p={Largop,Anchop,minp,maxp,valp,0};
+			m_Piezas.push_back(p);
+		}
+		*/
+		Pieza p={Largop,Anchop,minp,maxp,valp,0,0,0,i};
+		m_Piezas.push_back(p);
+		m_total_valor+=valp*maxp;
+		m_Numpiezas_total+=maxp;
+		m_total_superficie+=Largop*Anchop*maxp;
+		maxL+=__max(Largop,Anchop)*maxp;
+
+
+
+	}
+	maxL=(m_total_superficie*(2)/m_W);
+	fclose(fin2);
+
+	if (m_L==100000) m_L=maxL;
+	m_Numpiezas=m_Piezas.size();
+	//Ordeno las piezas por su eficiencia
+//	if (m_Posible!=false)
+//	if (ProblemasLodi!=true && ProblemasHifi!=true)
+//	std::sort(m_Piezas.begin(),m_Piezas.end());
+//	else
+	std::sort(m_Piezas.begin(),m_Piezas.end(),orden_strip());
+//	GraspStrip(false);
+//	std::sort(m_Piezas.begin(),m_Piezas.end(),orden_strip2());
+	JuntarPiezasIguales();
+
+	for (i=0;i<m_Numpiezas ;i++)
+	{
+		m_Piezas[i].key=i;
+	}
+//	FijarPiezasInicialmenteMejorada();
+//	FijarPiezasInicialmente();
+	//Solo para el strip packing no es para ningún problema más
+
+//	CotaSuperior();
+//	else
+//	std::sort(m_Piezas.begin(),m_Piezas.end(),orden_no_posible());
+//	EscribirPiezas();
+}

@@ -1,0 +1,112 @@
+int CUTTING::CotaRamonFijas()
+{
+	//Esta cota se colocan todas las que son mayores que 
+	//mas de la mitad y al lado la mayor de las que caben
+	// si cabe solamente una
+	//luego es el area que quede
+	//en perdida segura meto lo que he metido de esa
+	//pieza fijado
+	bool seguir=true;
+	int suma_perdidas=0;
+	int Cota=0;
+	for (register int i=0;i<m_Numpiezas  && seguir==true;i++)
+	{
+
+		if (m_Piezas[i].perdida_segura<(m_Piezas[i].largo*m_Piezas[i].max))
+		{
+			int Largo=(m_Piezas[i].largo*m_Piezas[i].max)-m_Piezas[i].perdida_segura;
+			int Ancho=m_Piezas[i].ancho;
+			//Comprobamos que no cabe más de una
+			//primero la última puesta dos veces
+			
+			//Condicion de que quepan menos de 2 piezas en el trozo
+			//Tengo que tener una función que me diga esto
+			seguir=CabenMasDeDosPiezas(m_W-m_Piezas[i].ancho);
+			if (seguir==true)
+			{
+//			if (((m_Piezas[m_Numpiezas-1].max==1) && ((m_W-m_Piezas[i].ancho)<(m_Piezas[m_Numpiezas-1].ancho+m_Piezas[m_Numpiezas-2].ancho)))|| ((m_Piezas[m_Numpiezas-1].ancho*2)<(m_W-m_Piezas[i].ancho) && (m_Piezas[i].max>=2)))
+//			{
+					//Esta solo tiene una que cabe
+					Cota+=Largo;
+					m_Piezas[i].perdida_segura=m_Piezas[i].largo;
+					for (register k=i;k<m_Numpiezas && Largo!=0;k++)
+					{
+
+						for (int j=0;j<m_Piezas[k].max;j++)
+						{
+							int larogp=m_Piezas[k].largo;
+							int anchop=m_Piezas[k].ancho;
+							if (m_Piezas[k].ancho>(m_W-m_Piezas[i].ancho))
+								continue;
+							if (m_Piezas[k].perdida_segura==(m_Piezas[k].max*m_Piezas[k].largo))
+								continue;
+
+							if ((m_Piezas[k].largo<Largo && m_Piezas[k].perdida_segura==0) || 
+								(m_Piezas[k].perdida_segura!=0  && (m_Piezas[k].largo-m_Piezas[k].perdida_segura)<Largo)) 
+							{
+								Largo-=m_Piezas[k].largo-m_Piezas[k].perdida_segura;
+								m_Piezas[k].perdida_segura+=(m_Piezas[k].largo-m_Piezas[k].perdida_segura);
+								int k2=m_Piezas[k].perdida_segura;
+								suma_perdidas+=m_Piezas[k].largo*((m_W-(m_Piezas[i].ancho+m_Piezas[k].ancho)));
+							}
+							else
+							{
+								m_Piezas[k].perdida_segura+=Largo;
+								int k2=m_Piezas[k].perdida_segura;
+								suma_perdidas+=Largo*((m_W-(m_Piezas[i].ancho+m_Piezas[k].ancho)));
+								Largo=0;
+							}
+						}
+
+							
+					}
+				}
+			}
+	}
+	//Tengo en Cota lo que se puede meter solo de dos por dos
+
+	//Aqui me quedan trozos de piezas por tanto puedo aplicar las cotas anteriores
+	//para los restos 
+
+	int cota2=CotaInferiorL2ModificadaResto();
+	for (int register k=0;k<m_Numpiezas;k++)
+	{
+		m_Piezas[k].perdida_segura=0;
+	}
+	if (Cota+cota2>ceil((double)(m_total_superficie+suma_perdidas)/(double)m_W))
+	return (Cota+cota2);
+	else
+	return ceil((double)(m_total_superficie+suma_perdidas)/(double)m_W);
+}
+bool CUTTING::CabenMasDeDosPiezas(int Ancho)
+{
+	bool seguir=true;
+	int min1=0;
+	int min2=0;
+	for (register int i=(m_Numpiezas-1);i>=0 && seguir==true;i--)
+	{
+		int k1=m_Piezas[i].largo;
+		int k2=m_Piezas[i].perdida_segura;
+		int k3=m_Piezas[i].max;
+		if (m_Piezas[i].ancho<Ancho && m_Piezas[i].perdida_segura<(m_Piezas[i].largo*m_Piezas[i].max))
+		{
+			if (min1!=0)
+			{
+				min2=m_Piezas[i].ancho;
+				seguir=false;
+			}
+			if (min1==0)
+			{
+				min1=m_Piezas[i].ancho;
+			}
+			
+		}
+	}
+	if ((min1+min2)>Ancho)
+	{
+		return true;
+	}
+	else
+		return false;
+
+}

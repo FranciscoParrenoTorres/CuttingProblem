@@ -1,0 +1,179 @@
+//Quito lo que tiene de perdida segura
+int NODE::CotaInferiorL2ParcialModificada()
+{
+
+	//Primero para el lado natural seguidamente para el lado simétrico
+	int max=0;
+	int sum1=0,sum21=0,sum22=0,sum23=0;
+	//Para que sea más rapido suponer un problema con anchura 3000
+	//solo miro los alphas del conjunto de alphas y de las alturas de los extreme points
+	std::set<int> ::iterator its;
+	for (its=m_problema->GetAlphas().begin();its!=m_problema->GetAlphas().end();its++)
+//	for (int register k1=0;k1<=m_W;k1++)
+	{
+		int alpha=(*its);
+//		printf("%d\t",alpha);
+//		int alpha=k1;
+		sum21=0;
+		sum22=0;
+		std::list<int> ::iterator itl;
+		int largo=0,ancho=0;
+		//Piezas que estan sin meter
+		for (itl=m_lista_piezas.begin();itl!=m_lista_piezas.end();itl++)
+		{
+			ancho=(*m_piezas)[(*itl)].ancho;
+			largo=(*m_piezas)[(*itl)].largo;
+			//J1
+			if (alpha==1 && ancho>m_W-alpha)
+				sum1+=largo*((*m_piezas)[(*itl)].max-(*m_piezas)[(*itl)].num);
+			//J2
+			if (ancho<=m_W-alpha && ancho>m_W/2)
+			{
+				if (alpha==1) sum1+=largo*((*m_piezas)[(*itl)].max-(*m_piezas)[(*itl)].num);
+				sum22+=((m_W-ancho)*largo)*((*m_piezas)[(*itl)].max-(*m_piezas)[(*itl)].num);
+				sum23+=(*m_piezas)[(*itl)].perdida_segura*((*m_piezas)[(*itl)].max-(*m_piezas)[(*itl)].num);
+			}
+			//j3
+			if (ancho<=m_W/2 && ancho>=alpha)
+			{
+				sum21+=largo*ancho*((*m_piezas)[(*itl)].max-(*m_piezas)[(*itl)].num);
+			}
+		}
+		if (m_corner_points.size()==0) break;
+		if (alpha==1 && m_corner_points[m_corner_points.size()-1].second>0)
+		sum1+=m_corner_points[m_corner_points.size()-1].second;
+		for (register int k=m_corner_points.size()-1;k>=1;k--)
+		{
+			//J1
+			if (alpha==1 && m_corner_points[k].first>m_W-alpha)
+				sum1+=m_corner_points[k-1].second-m_corner_points[k].second;
+			//J2
+			if (m_corner_points[k].first<=m_W-alpha && m_corner_points[k].first>m_W/2)
+			{
+				if (alpha==1) sum1+=m_corner_points[k-1].second-m_corner_points[k].second;
+				sum22+=((m_W-m_corner_points[k].first)*((m_corner_points[k-1].second-m_corner_points[k].second)));
+			}
+			//j3
+			if (m_corner_points[k].first<=m_W/2 && m_corner_points[k].first>=alpha)
+			{
+				sum21+=(m_corner_points[k-1].second-m_corner_points[k].second)*m_corner_points[k].first;
+			}
+		}
+		if (m_corner_points[0].first>0)
+		{
+			//J1
+			if (alpha==1 && m_corner_points[0].first>m_W-alpha)
+				sum1+=m_mejor_sol_posible-m_corner_points[0].second;
+			//J2
+			if (m_corner_points[0].first<=m_W-alpha && m_corner_points[0].first>m_W/2)
+			{
+				if (alpha==1) sum1+=(m_mejor_sol_posible-m_corner_points[0].second);
+				sum22+=((m_W-m_corner_points[0].first)*(m_mejor_sol_posible-m_corner_points[0].second));
+			}
+			//j3
+			if (m_corner_points[0].first<=m_W/2 && m_corner_points[0].first>=alpha)
+			{
+				sum21+=(m_mejor_sol_posible-m_corner_points[0].second)*m_corner_points[0].first;
+			}
+		}
+		int maxThisalpha=sum1+__max(0,ceil((double)(sum21-sum22+sum23)/(double)m_W));
+		if (maxThisalpha>max)
+		{
+			max=maxThisalpha;
+
+			if (max>=m_problema->GetBestSolution())
+			{
+				EscribirPantallaSolucion();
+
+				return  max;
+			}
+		}
+	}
+	sum1=0;
+	for (int k1=0;k1<m_extreme_points.size();k1++)
+	{
+		int alpha=m_posiciones_finales[m_extreme_points[k1]].first;
+		if (alpha>(m_W/2))
+			continue;
+		
+//		printf("%d\t",alpha);
+
+		sum21=0;
+		sum22=0;
+		std::list<int> ::iterator itl;
+		int largo=0,ancho=0;
+		//Piezas que estan sin meter
+		for (itl=m_lista_piezas.begin();itl!=m_lista_piezas.end();itl++)
+		{
+			ancho=(*m_piezas)[(*itl)].ancho;
+			largo=(*m_piezas)[(*itl)].largo;
+			//J1
+			if (k1==0 && ancho>m_W-alpha)
+				sum1+=largo;
+			//J2
+			if (ancho<=m_W-alpha && ancho>m_W/2)
+			{
+				if (k1==0) sum1+=largo;
+				sum22+=((m_W-ancho)*largo);
+				sum23+=(*m_piezas)[(*itl)].perdida_segura;
+			}
+			//j3
+			if (ancho<=m_W/2 && ancho>=alpha)
+			{
+				sum21+=largo*ancho;
+			}
+		}
+		if (m_corner_points.size()==0) break;
+		if (k1==0 && m_corner_points[m_corner_points.size()-1].second>0)
+		sum1+=m_corner_points[m_corner_points.size()-1].second;
+		for (register int k=m_corner_points.size()-1;k>=1;k--)
+		{
+			//J1
+			if (k1==0 && m_corner_points[k].first>m_W-alpha)
+				sum1+=m_corner_points[k-1].second-m_corner_points[k].second;
+			//J2
+			if (m_corner_points[k].first<=m_W-alpha && m_corner_points[k].first>m_W/2)
+			{
+				if (k1==0) sum1+=m_corner_points[k-1].second-m_corner_points[k].second;
+				sum22+=((m_W-m_corner_points[k].first)*((m_corner_points[k-1].second-m_corner_points[k].second)));
+			}
+			//j3
+			if (m_corner_points[k].first<=m_W/2 && m_corner_points[k].first>=alpha)
+			{
+				sum21+=(m_corner_points[k-1].second-m_corner_points[k].second)*m_corner_points[k].first;
+			}
+		}
+		if (m_corner_points[0].first>0)
+		{
+			//J1
+			if (k1==0 && m_corner_points[0].first>m_W-alpha)
+				sum1+=m_mejor_sol_posible-m_corner_points[0].second;
+			//J2
+			if (m_corner_points[0].first<=m_W-alpha && m_corner_points[0].first>m_W/2)
+			{
+				if (alpha==1) sum1+=(m_mejor_sol_posible-m_corner_points[0].second);
+				sum22+=((m_W-m_corner_points[0].first)*(m_mejor_sol_posible-m_corner_points[0].second));
+			}
+			//j3
+			if (m_corner_points[0].first<=m_W/2 && m_corner_points[0].first>=alpha)
+			{
+				sum21+=(m_mejor_sol_posible-m_corner_points[0].second)*m_corner_points[0].first;
+			}
+		}
+		int maxThisalpha=sum1+__max(0,ceil((double)(sum21-sum22+sum23)/(double)m_W));
+		if (maxThisalpha>max)
+		{
+			max=maxThisalpha;
+			if (max>=m_problema->GetBestSolution())
+			{
+				EscribirPantallaSolucion();
+
+				return  max;
+			}
+		}
+	}
+//	printf("\n");
+	return max;
+
+
+}

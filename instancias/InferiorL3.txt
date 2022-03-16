@@ -1,0 +1,122 @@
+int NODE::CotaInferiorL3Parcial()
+{
+	std::set<int> ::iterator its;
+	std::list<int> ::reverse_iterator it;
+	//Para recorrerlas por 
+	int k=0;
+	int MaxL3=0,maxThisalpha,maxThisalphaMa;
+	int numPiezas=0;
+//	printf("\n");
+	//Recorro la lista de alphas
+	for (its=m_problema->GetAlphas().begin();its!=m_problema->GetAlphas().end();its++)
+	{
+		int alpha=(*its);
+		int min=99999,maxk2=0;
+		int primeroEntraJ1=m_W,sum1=0,sum2=0,multiplicando=0,divisor=0,maxpequenos=0;
+		int sumM2=0,RsumM2=0,sumM3=0;
+		int SumaTotal=m_W;
+		int cont1=0,cont2=0,anch1=0,anch2=0;
+		
+
+		int largo,ancho;
+		//Recorro las dos listas a la vez ordenadas
+		it=m_lista_piezas.rbegin();
+		k=0;
+		bool fin=false;
+		while (!(it==m_lista_piezas.rend() && k==m_extreme_points.size() ))
+		{
+			if (it!=m_lista_piezas.rend())
+				anch1=(*m_piezas)[(*it)].ancho;
+			else anch1=99999;
+			if (k!=m_extreme_points.size())
+				anch2=m_posiciones_finales[m_extreme_points[k]].first;
+			else
+				anch2=99999;
+			if (anch1<anch2 )
+			{
+				numPiezas=((*m_piezas)[(*it)].max-(*m_piezas)[(*it)].num);
+				largo=(*m_piezas)[(*it)].largo;
+				ancho=(*m_piezas)[(*it)].ancho;
+				it++;
+				cont1++;
+			}
+			else
+			{
+				ancho=m_posiciones_finales[m_extreme_points[k]].first;
+				numPiezas=1;
+				if ((k+1)==m_extreme_points.size())
+				largo=m_posiciones_finales[m_extreme_points[k]].second;
+				else
+				largo=m_posiciones_finales[m_extreme_points[k]].second-m_posiciones_finales[m_extreme_points[k+1]].second;
+				k++;
+				cont2++;
+			}
+//			printf("%d ",ancho);
+			//Cota de Martello
+
+			//Aqui tengo ya las dos listas en una ordenada
+			//Meter en J1 que es Igual a M1
+			if (ancho>(m_W-alpha))
+			{
+				if (ancho<primeroEntraJ1)
+					primeroEntraJ1=ancho;
+				sum1+=largo*numPiezas;
+				
+			}
+			//Meter en J2
+			if (ancho<=(m_W-alpha) && ancho>=alpha)
+			{
+				//Martello
+				if (ancho>m_W/2) 
+				{
+					sumM2+=largo*numPiezas;
+					RsumM2+=(m_W-ancho)*largo*numPiezas;
+				}
+				else
+					sumM3+=ancho*largo*numPiezas;
+				if (largo>maxk2)
+					maxk2=largo;
+				if (ancho<min)
+					min=ancho;
+				for (int register j=1;j<=numPiezas;j++)
+				{
+					if (SumaTotal>=0)
+					{
+						SumaTotal-=ancho;
+						sum2+=largo;
+						if (SumaTotal>=0)
+						{
+							divisor++;
+						}
+						else //Calcular maximos para el multiplicando
+						{
+							maxpequenos=SumaTotal+largo;
+							if (divisor>1)
+								multiplicando=__max(ceil((double)m_W/divisor),ceil((double)(m_W-min)/(divisor-1)));
+							else
+								multiplicando=ceil((double)m_W/divisor);
+
+						}
+					}
+					else
+					{
+						sum2+=floor(ancho/multiplicando)*largo;
+					}
+				}
+			}
+			
+		}// fin de recorrer las dos listas
+		maxThisalpha=sum1+ __max(ceil((double)(sum2)/(divisor)),maxk2);
+		maxThisalphaMa=sum1+sumM2+__max(0,ceil((double)(sumM3-RsumM2)/(double)m_W));
+
+		if (maxThisalpha>MaxL3)
+			MaxL3=maxThisalpha;
+		if (maxThisalphaMa>MaxL3)
+			MaxL3=maxThisalphaMa;
+		//Aqui faltaría incluir que meta los que son más grandes
+
+
+	}//FIn del bucle de los alphas
+	return MaxL3;
+
+}

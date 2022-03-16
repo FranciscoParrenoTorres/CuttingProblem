@@ -1,0 +1,118 @@
+--------------------Configuration: cutting - Win32 Debug--------------------
+Compiling...
+cutting.cpp
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(269) : error C2078: too many initializers
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(272) : error C2065: 'm_Numpiezas_total' : undeclared identifier
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(1162) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(1303) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2230) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2255) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2401) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2485) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2529) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2612) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2735) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2771) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2832) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(2912) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(3289) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(3703) : warning C4018: '>' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(3751) : warning C4018: '>' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(5957) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(5958) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(5959) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(5960) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(5977) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(5978) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(5979) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(5980) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6101) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6102) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6103) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6104) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6121) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6122) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6123) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6124) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6257) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6258) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6259) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6260) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6277) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6278) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6279) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6280) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6399) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6400) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6401) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6402) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6420) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6421) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6422) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(6423) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7721) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7721) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7723) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7723) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7754) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7754) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7756) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7756) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7757) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7757) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7758) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7758) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7759) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7759) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7772) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7772) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7772) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7772) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7809) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7809) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7809) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7809) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7848) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7848) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7848) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7848) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7900) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7900) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7902) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7902) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7934) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7934) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7936) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7936) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7937) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7937) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7938) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7938) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7939) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7939) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7952) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7952) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7952) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7952) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7978) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7978) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7978) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(7978) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(10898) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(10903) : warning C4018: '<' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(10906) : warning C4018: '<' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(10961) : warning C4018: '<' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(10977) : warning C4018: '<' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(11412) : warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(11414) : warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(11415) : warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(11493) : warning C4018: '<' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(11499) : warning C4018: '==' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(11536) : warning C4018: '>=' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(11538) : warning C4018: '==' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(12661) : warning C4018: '>' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(12692) : warning C4018: '>' : signed/unsigned mismatch
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(12790) : warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(12792) : warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(12793) : warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+C:\afrank\ProblemaCorteStrip\GraspStripArticuloNOTOCAR\cutting.cpp(13096) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
