@@ -209,6 +209,9 @@ void CUTTING::LeerProblema(char *name)
 	m_MinLargo=9999;
 	m_MinAncho=9999;
 	m_MaxLargo=0;
+/*	int temp = m_L;
+	m_L = m_W;
+	m_W = temp;*/
 	for (int i=0;i<m_Numpiezas;i++)
 	{
 		if (ProblemasHopper!=true && ProblemasLodi!=true && ProblemasHifi!=true)
@@ -1413,6 +1416,7 @@ int CUTTING::Tabu(bool dibu)
 											}
 											m_solbest=(Movimiento.GetValor()+m_sol_actual);
 											m_iter_solbest=m_iter_actual;
+											m_solbest_lista_bloques = Movimiento.GetListaBloques();
 											mejora=true;
 											Estabu=9999;
 											m_lista_tabu.clear();
@@ -1598,10 +1602,10 @@ int CUTTING::Tabu(bool dibu)
 												Estabu=9999;
 												m_solbest=(Movimiento.GetValor()+m_sol_actual);
 												m_iter_solbest=m_iter_actual;
-
+												m_solbest_lista_bloques = Movimiento.GetListaBloques();
 												mejora=true;
 												m_lista_tabu.clear();
-//												printf("MejorA %d Iter %d Sin mejorar %d\n",m_solbest,m_iter_actual, m_iter_sin_mejorar);
+												printf("MejorA %d Iter %d Sin mejorar %d\n",m_solbest,m_iter_actual, m_iter_sin_mejorar);
 												m_iter_sin_mejorar=0;
 
 											}
@@ -1661,12 +1665,12 @@ int CUTTING::Tabu(bool dibu)
 			for (int register i=0;i<=(tamlista-Estabu);i++)
 				m_lista_tabu_new.pop_front();
 //			m_lista_tabu_aumen.pop_front();
-			printf("\nTengo que borraR %d TamLista %d %d",m_iter_actual,m_lista_tabu_new.size(),m_iter_sin_mejorar);
+//			printf("\nTengo que borraR %d TamLista %d %d",m_iter_actual,m_lista_tabu_new.size(),m_iter_sin_mejorar);
 			goto again;
 			}
 			else
 			{
-				printf("\nTengo que borrar %d TamLista %d %d",m_iter_actual,m_lista_tabu_new.size(),m_iter_sin_mejorar);
+//				printf("\nTengo que borrar %d TamLista %d %d",m_iter_actual,m_lista_tabu_new.size(),m_iter_sin_mejorar);
 				if (m_lista_tabu_new.size()>0) m_lista_tabu_new.pop_front();
 				goto again;
 
@@ -13280,8 +13284,8 @@ void CUTTING::WriteSolution()
 		exit(4);
 	}
 	fprintf(fin3, "%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", m_Nombre,m_W, m_L, 1, m_Numpiezas, 0, m_solbest, m_solbest, m_L,m_PuedenRotarsePiezas, m_Restringido);
-
-	if (m_lista_bloques.size() != 0)
+	
+/*	if (m_lista_bloques.size() != 0)
 	{
 		for (auto it = m_lista_bloques.begin(); it != m_lista_bloques.end(); it++)
 		{
@@ -13315,7 +13319,7 @@ void CUTTING::WriteSolution()
 		}
 	}
 	else
-	{
+	{*/
 		for (auto it = m_solbest_lista_bloques.begin(); it != m_solbest_lista_bloques.end(); it++)
 		{
 
@@ -13347,7 +13351,7 @@ void CUTTING::WriteSolution()
 				x = x + L;
 			}
 		}
-	}
+//	}
 
 
 	fclose(fin3);

@@ -755,7 +755,7 @@ FILE *fin2;
 	int x=0,y=0,X=0,Y=0,plate=0,pieza=0,ini=1,plate_defectos=0,obj=0,total_width=0,rotate=0,restringido=0;
 	fscanf(fin2,"%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d",&nombre, &H, &W, &plates, &piezas,&defectos,&plate_defectos,&obj,&total_width, &rotate, &restringido);
 
-	float factor=__max((double)78/(double)(W*plates),(double)40/(double)(H))/2;
+	float factor=__max((double)78/(double)(__max(W,H)*plates),(double)40/(double)(__min(H,W)))/2;
 //	factor=0.1;
 		float izquierda=(-56-((H+2)*factor));
 	float izquierda_futuro=0;
